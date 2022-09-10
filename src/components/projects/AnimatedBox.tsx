@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 import { useSpring, animated, config } from '@react-spring/three'
+import { ContainerStyled } from './ProjectContainer'
 
 const Box = (props: ThreeElements['mesh']) => {
     const mesh = useRef<THREE.Mesh>(null!)
@@ -25,19 +26,21 @@ const Box = (props: ThreeElements['mesh']) => {
             onPointerLeave={() => setHover(false)}
         >
             <boxBufferGeometry />
-            <meshPhongMaterial color={hovered ? 'pink' : 'lime'} />
+            <meshPhongMaterial color={hovered ? 'red' : 'lime'} />
         </animated.mesh>
     )
 }
 
 export const AnimatedBox = () => {
     return (
-        <Canvas>
-            <ambientLight />
-            <pointLight position={[10, 10, 10]} />
-            <Box position={[-1.2, 0, 0]} />
-            <Box position={[1.2, -2, 0]} />
-            <Box position={[3, 0, 1]} />
-        </Canvas>
+        <ContainerStyled>
+            <Canvas>
+                <ambientLight />
+                <pointLight position={[10, 10, 10]} />
+                <Box position={[-1.2, 0, 0]} />
+                <Box position={[1.2, -2, 0]} />
+                <Box position={[3, 0, 1]} />
+            </Canvas>
+        </ContainerStyled>
     )
 }

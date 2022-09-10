@@ -1,9 +1,9 @@
 export const projects = [
     {
         id: '01',
-        name: 'My first Project',
-        description: 'some description',
-        url: 'first-project',
+        name: 'Animated Box',
+        description: 'Example to animated box using Three.js',
+        url: 'animated-box',
         image: 'assets/images/first.png',
     },
     {
